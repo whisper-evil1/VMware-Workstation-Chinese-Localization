@@ -1,0 +1,26 @@
+1.
+  要改成中文：{打开浏览器，访问这个地址：
+https://github.com/Kuroba-Sayuki/VMware-Workstation-Chinese-Localization
+点击绿色的 Code 按钮 → 选择 Download ZIP。
+下载完成后，解压这个 ZIP 文件。
+解压后进入文件夹，找到这个路径：
+VMware Workstation Messages → 里面的 zh_CN 文件夹。
+（zh_CN 文件夹里应该有这三个文件：vmappsdk-zh_CN.dll、vmui-zh_CN.dll、vmware.vmsg）
+把这个 zh_CN 文件夹先放在桌面备}
+2.
+  创建虚拟机-->自定义-->稍后配置-->Linux（ubuntu 64位）-->选路径-->cpu：2/每个处理内核：2-->内存4gb-->网络类型：NAT-->磁盘大小：20G
+配置操作系统：
+3.
+  编辑虚拟机设置：cd/dvd-->使用ios清华镜像网站上的文件（找对应的版本号）-->返回虚拟机选择映像，选择清除磁盘安装-->安装重启
+进入之后配置联网，先打开终端中的netplan：sudo nano /etc/netplan/01-network-manager-all.yaml
+在文件中写入：network:
+              renderer: NetworkManager
+              ethernets:
+               ens33:
+                dhcp4: true
+              version: 2
+运行：sudo netplan apply（无报错）
+测试网址是否为192.168.192.128/24（若是，即网通了）
+软件更新：sudo apt update
+安装工具：sudo apt install -y open-vm-tools-desktop
+装完重启：sudo reboot
