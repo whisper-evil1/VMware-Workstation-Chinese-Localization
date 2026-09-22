@@ -1,0 +1,9 @@
+进入之后配置联网，先打开终端中的netplan：sudo nano /etc/netplan/01-network-manager-all.yaml
+在文件中写入：network:
+              renderer: NetworkManager
+              ethernets:
+               ens33:
+                dhcp4: true
+              version: 2
+运行：sudo netplan apply（无报错）
+测试网址是否为192.168.192.128/24（若是，即网通了）
