@@ -28,3 +28,7 @@ VMware Workstation Messages → 里面的 zh_CN 文件夹。
 网络配置：vm上编辑-->虚拟网络编辑器-->更改配置（右下角）
          现在的网络：192.168.192.128（前六位是局域网，后面的192可以更改，最后的128可以在ipv4里面手动网关是默认路由然后更改）然后取消自动里面的dns手动输入，和网关一样
          改完后：192.168.192.101
+下载xshell8，完成远程连接-->在Ubuntu虚拟机的终端上输入sudo apt update--> sudo apt upgrade-->sudo apt install -y ssh然后在xshell上重新连接成功
+根据下载https://winscp.net/eng/download.php（可传输虚拟机之间文件）
+在winscp里面主机名：虚拟机网卡，用户名whisper（虚拟机用户名）密码（登录虚拟机的密码）-->登录-->
+测试：在本机创建文件然后在winscp里面找到拖拽传入虚拟机，然后在虚拟机打开看是否可以打开，反之，同理
